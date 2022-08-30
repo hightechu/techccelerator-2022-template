@@ -1,27 +1,25 @@
+<%- include('../../partials/head'); %>
 
-  <%- include('../../partials/head'); %>
+<header><%- include('../../partials/nav'); %></header>
 
-  <header>
-      <%- include('../../partials/nav'); %>
-  </header>
-    
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-          <h1>Login</h1>
-          <form action="/auth/login" method="post" autocomplete="on">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br>
-            <input type="submit" value="Submit"><br>
-          </form>
-        </div>
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Login</h1>
+        <% if (message) { %>
+        <div class="alert alert-primary" role="alert"><%= message %></div>
+        <% } %>
+        <form action="/auth/login" method="post" autocomplete="on">
+          <label for="username">Username:</label><br />
+          <input type="text" id="username" name="username" /><br />
+          <label for="password">Password:</label><br />
+          <input type="password" id="password" name="password" /><br />
+          <input type="submit" value="Submit" /><br />
+        </form>
       </div>
     </div>
-  </main>
-    
-    <%- include('../../partials/footer'); %>
-  
-    
+  </div>
+</main>
+
+<%- include('../../partials/footer'); %>
