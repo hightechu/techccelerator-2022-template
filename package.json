@@ -15,11 +15,13 @@
     "dotenv": "^16.0.1",
     "ejs": "^3.1.5",
     "express": "^4.15.2",
+    "express-session": "^1.17.3",
     "pg-promise": "^10.11.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.5",
     "got": "^11.3.0",
     "nodemon": "^2.0.19",
     "tape": "^4.7.0"
