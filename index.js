@@ -3,7 +3,6 @@ const app = express()
 const authjs = require('./auth.js');
 const auth = authjs.auth;
 const path = require('path');
-const pgp = require('pg-promise')();
 const db = authjs.db;
 const PORT = process.env.PORT || 5000
 
