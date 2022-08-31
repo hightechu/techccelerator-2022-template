@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')))
   }))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
+  // The .use below just tells every page to set "user" as the username of the user session.
+  // This makes it easier to render the name of the person on the webpage.
   .use((req, res, next) => {
     res.locals.user = req.session.username
     next()
@@ -32,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')))
   .use('/auth', auth)
   // ROUTING EXAMPLES
   .get('/', (req, res) => res.render('pages/index', { title: 'Home' }))
-  .get('/help', (req, res) => res.render('pages/help', { title: 'Help'}))
+  .get('/help', (req, res) => res.render('pages/help', { title: 'Help' }))
   // ROUTING STARTS HERE
 
 

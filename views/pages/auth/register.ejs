@@ -6,8 +6,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12 d-flex justify-content-center">
-        <div class="card" style="width: 18rem">
-          <h1 class="card-title">Register</h1>
+        <div class="card form-group" style="width: 18rem">
           <% if (message) { %>
           <div class="alert alert-primary" role="alert"><%= message %></div>
           <% } %>
@@ -17,13 +16,21 @@
             autocomplete="on"
             class="card-body"
           >
-            <label for="username">Username:</label><br />
-            <input type="text" id="username" name="username" /><br />
-            <label for="password">Password:</label><br />
-            <input type="password" id="password" name="password" /><br />
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              class="form-control"
+            /><br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="form-control"
+            /><br />
             <input
               type="submit"
-              value="Submit"
+              value="Register"
               class="btn btn-outline-primary"
             /><br />
           </form>

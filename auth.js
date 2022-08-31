@@ -18,15 +18,19 @@ exports.session = session;
 // Handles HTTP requests that go to https://localhost:PORT/auth
 
 // Logout Handling
+// Destroys user session and redirects back to the page the user was on
 auth.get('/logout', (req, res) => {
   req.session.destroy((err) => { })
   res.redirect('back')
 })
 
 // Login User function
+// Input Values:
+//    username: string
+//    password: plaintext password
 // Return Values:
 //    null: if matching user does not exist
-//    object: returns the correct user
+//    object: returns the user as an object if successful
 async function loginUser(username, password) {
   return bcrypt.hash('1', saltRounds).then(async (fakeHash) => {
     return db.one(`SELECT Username, Password FROM users WHERE Username='${username}'`).then(async (user) => {
